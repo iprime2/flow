@@ -25,7 +25,7 @@ const CustomNode = ({ data, isConnectable }) => {
           {data.label === 'input' ? (
             <input type='text' placeholder='input' />
           ) : (
-            <span>Sample module </span>
+            <span>{data.name ? data.name : 'Sample module'}</span>
           )}
         </div>
         <div className='nodeRight' style={{ textTransform: 'uppercase' }}>

@@ -36,10 +36,11 @@ const WorkFlow = () => {
     fetchModule()
   }, [])
 
-  const onDragStart = (event, nodeType, from, to) => {
-    event.dataTransfer.setData('application/reactflow', nodeType)
-    event.dataTransfer.setData('application/reactflow', from)
-    event.dataTransfer.setData('application/reactflow', to)
+  const onDragStart = (event, nodeType, from, to, name) => {
+    event.dataTransfer.setData('application/reactflow/type', nodeType)
+    event.dataTransfer.setData('application/reactflow/from', from)
+    event.dataTransfer.setData('application/reactflow/to', to)
+    event.dataTransfer.setData('application/reactflow/name', name)
 
     event.dataTransfer.effectAllowed = 'move'
   }
@@ -64,7 +65,8 @@ const WorkFlow = () => {
                       event,
                       'output',
                       item.input_type,
-                      item.output_type
+                      item.output_type,
+                      item.name
                     )
                   }
                   draggable
@@ -75,7 +77,7 @@ const WorkFlow = () => {
                   >
                     {item.input_type}
                   </div>
-                  <div className='moduleCentre'>{`Sample module ${index}`}</div>
+                  <div className='moduleCentre'>{item.name}</div>
                   <div
                     className='moduleRight'
                     style={{ textTransform: 'uppercase' }}
