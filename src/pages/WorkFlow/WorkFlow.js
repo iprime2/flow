@@ -25,7 +25,7 @@ const WorkFlow = () => {
     const fetchModule = async () => {
       try {
         const res = await axios.get(
-          `https://64307b10d4518cfb0e50e555.mockapi.io/workflow?page=1&limit=5`
+          `https://64307b10d4518cfb0e50e555.mockapi.io/modules?page=1&limit=5`
         )
         setModuleData(res.data)
       } catch (error) {
@@ -64,13 +64,13 @@ const WorkFlow = () => {
                   }
                   draggable
                 >
-                  <div className='moduleLeft'>A</div>
+                  <div className='moduleLeft'>{item.input_type}</div>
                   <div className='moduleCentre'>{`Sample module ${index}`}</div>
                   <div
                     className='moduleRight'
                     style={{ textTransform: 'uppercase' }}
                   >
-                    {item.input_type}
+                    {item.output_type}
                   </div>
                 </div>
               ))}
