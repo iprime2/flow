@@ -17,33 +17,30 @@ const initialNodes = [
     id: 'A',
     type: 'customNode',
     position: { x: 0, y: 0 },
-    data: { label: `input`, id: 'A' },
+    data: { label: `input`, to: 'A', from: 'A' },
   },
   {
     id: 'A',
     type: 'customNode',
     position: { x: 0, y: 100 },
-    data: { label: `output`, id: 'A' },
+    data: { label: `output`, to: 'A', from: 'A' },
   },
   {
     id: 'B',
     type: 'customNode',
     position: { x: 200, y: 180 },
-    data: { label: `output`, id: 'B' },
+    data: { label: `output`, to: 'B', from: 'A' },
   },
   {
-    id: '4',
+    id: 'C',
     type: 'customNode',
     position: { x: 10, y: 200 },
-    data: { label: `output`, id: 'c' },
+    data: { label: `output`, to: 'c', from: 'A' },
   },
 ]
 const initialEdges = [{ id: 'e1-2', source: '1', target: '2' }]
 
 const proOptions = { hideAttribution: true }
-
-let id = 0
-const getId = () => `dndnode_${id++}`
 
 export default function App() {
   const reactFlowWrapper = useRef(null)
@@ -69,7 +66,8 @@ export default function App() {
 
       const reactFlowBounds = reactFlowWrapper.current.getBoundingClientRect()
       const type = event.dataTransfer.getData('application/reactflow')
-      const id = event.dataTransfer.getData('application/reactflow')
+      const to = event.dataTransfer.getData('application/reactflow')
+      const from = event.dataTransfer.getData('application/reactflow')
 
       // check if the dropped element is valid
       if (typeof type === 'undefined' || !type) {
@@ -81,10 +79,10 @@ export default function App() {
         y: event.clientY - reactFlowBounds.top,
       })
       const newNode = {
-        id: id,
+        id: from,
         type: 'customNode',
         position,
-        data: { label: `output` },
+        data: { label: `output`, from: from, to: to },
       }
 
       setNodes((nds) => nds.concat(newNode))

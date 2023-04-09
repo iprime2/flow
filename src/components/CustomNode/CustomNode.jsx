@@ -18,7 +18,9 @@ const CustomNode = ({ data, isConnectable }) => {
         isConnectable={isConnectable}
       />
       <div className='node'>
-        <div className='nodeLeft'>A</div>
+        <div className='nodeLeft' style={{ textTransform: 'uppercase' }}>
+          {data.from}
+        </div>
         <div className='nodeCentre'>
           {data.label === 'input' ? (
             <input type='text' placeholder='input' />
@@ -26,7 +28,9 @@ const CustomNode = ({ data, isConnectable }) => {
             <span>Sample module </span>
           )}
         </div>
-        <div className='nodeRight'>B</div>
+        <div className='nodeRight' style={{ textTransform: 'uppercase' }}>
+          {data.to}
+        </div>
       </div>
 
       <Handle
