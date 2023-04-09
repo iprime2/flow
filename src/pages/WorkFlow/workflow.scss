@@ -1,0 +1,107 @@
+.workFlow {
+  padding: 20px;
+
+  padding: 20px;
+
+  .wrapper {
+    border: 1px solid rgb(101, 200, 253);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+
+    .header {
+      width: 98%;
+      font-weight: 600;
+      font-size: 18px;
+      display: flex;
+      align-items: flex-start;
+      padding: 30px 30px;
+      border-bottom: 1px solid rgb(101, 200, 253);
+
+      span {
+        margin-left: 20px;
+      }
+    }
+
+    .body {
+      width: 100%;
+      display: flex;
+      height: 600px;
+
+      .left {
+        width: 30%;
+        border-right: 1px solid rgb(101, 200, 253);
+
+        .leftTop {
+          height: 30px;
+          border-bottom: 1px solid rgb(101, 200, 253);
+          font-weight: 400;
+        }
+
+        .leftBottom {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          padding: 20px;
+
+          .module {
+            cursor: pointer;
+            padding: 0;
+            width: 180px;
+            height: 30px;
+            border: 1px solid rgb(94, 215, 248);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+
+            .moduleLeft {
+              font-size: 28px;
+              height: 100%;
+              font-weight: bold;
+              width: 20%;
+              font-size: 12px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-right: 1px solid rgb(94, 215, 248);
+            }
+
+            .moduleCentre {
+              height: 100%;
+              color: black;
+              width: 60%;
+              font-size: 12px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 12px;
+              background-color: rgb(94, 215, 248);
+              opacity: 20%;
+            }
+
+            .moduleRight {
+              height: 100%;
+              font-weight: bold;
+              width: 20%;
+              font-size: 12px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-left: 1px solid rgb(94, 215, 248);
+            }
+          }
+        }
+      }
+
+      .right {
+        padding: 5px;
+        width: 70%;
+      }
+    }
+  }
+}

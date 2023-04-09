@@ -1,0 +1,13 @@
+.home {
+  padding: 20px 10px;
+
+  .link {
+    text-decoration: none;
+    align-items: flex-start;
+
+    &:hover {
+      color: rgb(202, 120, 14);
+      text-decoration: underline;
+    }
+  }
+}
